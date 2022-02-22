@@ -7,8 +7,13 @@ public class StringCalculator {
         if (numbers == "")
             return rst;
 
-        if (numbers.startsWith("//"))
-            numbers = numbers.substring(3).replaceAll(numbers.substring(2, 3), ",");
+        if (numbers.startsWith("//")) {
+            if (numbers.contains("\n")) {
+                String delimiter = numbers.substring(2, numbers.indexOf("\n"));
+                numbers = numbers.substring(numbers.indexOf("\n") + 1).replaceAll(delimiter, ",");
+            } else
+                numbers = numbers.substring(3).replaceAll(numbers.substring(2, 3), ",");
+        }
 
         String[] numStrings = numbers.split(",|\n");
 

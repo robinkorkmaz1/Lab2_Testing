@@ -26,7 +26,7 @@ class StringCalculatorTest {
 
     @Test
     public void Step4Test() throws Exception {
-        assertEquals(6, sc.Add("//;1\n2;3"));
+        assertEquals(6, sc.Add("//;1;2;3"));
     }
 
     @Test
@@ -38,5 +38,10 @@ class StringCalculatorTest {
     @Test
     public void Step6Test() throws Exception {
         assertEquals(2, sc.Add("2,10001"));
+    }
+
+    @Test
+    public void Step7Test() throws Exception {
+        assertEquals(6, sc.Add("//,;\n1,;2,;3"));
     }
 }
