@@ -7,6 +7,9 @@ public class StringCalculator {
         if (numbers == "")
             return rst;
 
+        if (numbers.startsWith("//")) 
+            numbers = numbers.substring(3).replaceAll(numbers.substring(2,3), ",");
+
         String[] numStrings = numbers.split(",|\n");
 
         for (String num : numStrings) {
