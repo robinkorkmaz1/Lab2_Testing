@@ -49,4 +49,9 @@ class StringCalculatorTest {
     public void Step8Test() throws Exception {
         assertEquals(6, sc.Add("//[:][;]\n1:2;3"));
     }
+
+    @Test
+    public void Step9Test() throws Exception {
+        assertEquals(6, sc.Add("//[.:][,;]\n1.:2,;3"));
+    }
 }

@@ -10,16 +10,14 @@ public class StringCalculator {
         if (numbers.startsWith("//")) {
             if (numbers.contains("\n")) {
                 String delimiterStr = numbers.substring(2, numbers.indexOf("\n"));
-                if (delimiterStr.startsWith("[") && delimiterStr.endsWith("]")){
-                    String[] delimiters = delimiterStr.substring(1,delimiterStr.length()-1).split("\\]\\[");
+                if (delimiterStr.startsWith("[") && delimiterStr.endsWith("]")) {
+                    String[] delimiters = delimiterStr.substring(1, delimiterStr.length() - 1).split("\\]\\[");
                     numbers = numbers.substring(numbers.indexOf("\n") + 1);
                     for (String delimiter : delimiters)
                         numbers = numbers.replaceAll(delimiter, ",");
-                }
-                else
-                numbers = numbers.substring(numbers.indexOf("\n") + 1).replaceAll(delimiterStr, ",");
-            }
-            else
+                } else
+                    numbers = numbers.substring(numbers.indexOf("\n") + 1).replaceAll(delimiterStr, ",");
+            } else
                 numbers = numbers.substring(3).replaceAll(numbers.substring(2, 3), ",");
         }
 
