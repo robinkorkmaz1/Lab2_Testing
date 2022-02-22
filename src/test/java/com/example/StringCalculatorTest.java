@@ -34,4 +34,9 @@ class StringCalculatorTest {
         Exception ex = assertThrows(Exception.class, ()-> sc.Add("-1,-2,3"));
         assertTrue(ex.getMessage().contains("-1") && ex.getMessage().contains("-2"));
     }
+
+    @Test
+    public void Step6Test() throws Exception {
+        assertEquals(2, sc.Add("2,10001"));
+    }
 }

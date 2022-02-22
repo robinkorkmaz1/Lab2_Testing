@@ -18,7 +18,8 @@ public class StringCalculator {
             int numVal = Integer.parseInt(num);
             if (numVal < 0)
                 errorMsg += num + " ";
-            rst += numVal;
+            else if (numVal <= 1000)
+                rst += numVal;
         }
 
         if (errorMsg.length() > 23)
