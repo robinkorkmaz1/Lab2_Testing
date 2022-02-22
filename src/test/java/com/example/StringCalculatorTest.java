@@ -18,4 +18,9 @@ class StringCalculatorTest {
     public void Step2Test() {
         assertEquals(15, sc.Add("4,5,6"));
     }
+
+    @Test
+    public void Step3Test() {
+        assertEquals(6, sc.Add("1\n2,3"));
+    }
 }
